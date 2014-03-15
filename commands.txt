@@ -1,0 +1,8 @@
+# compile CoffeeScript file to JavaScript
+$ coffee -c makeArray.coffee
+
+# watch CoffeeScript file for changes and automatically re-compile
+$ coffee -cw makeArray.coffee
+
+# Coffee REPL
+$ coffee
