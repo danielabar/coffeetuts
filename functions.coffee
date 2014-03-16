@@ -99,3 +99,40 @@ test2 "one", "two"
 one
 two
 ###
+
+# Splat can also be the middle parameter
+test3 = (x, y..., z) ->
+  console.log x
+  console.log y
+  console.log z
+console.log "================"
+
+# Splatting the input (reverse?)
+test3 ["one", "two", "three", "four"]...
+###
+one
+[ 'two', 'three' ]
+four
+###
+console.log "================"
+
+# Anonymous Functions: 'do' keyword will automatically invoke
+do () ->
+  console.log "Hello"
+
+# Anonymous Function with default parameters
+do (message = "Hello Gorgeous!") ->
+  console.log message
+console.log "================"
+
+# Putting it all together:
+# Write a function that returns a random number between a range (inclusive)
+# Note min is last param so if user only passes one number, max becomes upper end of range
+#   and min can be assumed to be zero
+# Use optional parameters so this will work using sensible defaults, even if user doesn't pass anything
+rand = (max = 10, min = 0) ->
+  Math.floor(Math.random() * (max - min + 1)) + min
+
+console.log rand()
+console.log rand(100)
+console.log rand 30, 15
