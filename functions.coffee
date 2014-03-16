@@ -37,4 +37,65 @@ greet "Joe" + 10  # Compiled: greet("Joe" + 10)
 greet2 = (name) ->
   name = name || "friend"
 
-greet2()
+console.log greet2() # friend
+
+# Return is only implicit when its the last line in a function
+# Multiple return points in a function require explicit return statement
+
+# Setting optional parameters
+greetOption = (name = "friend") ->
+  console.log "greetOption: Hello #{name}"
+
+greetOption() # greetOption: Hello friend
+greetOption("Larry") # greetOption: Hello Larry
+
+# Splats: Like varargs in Java
+test = (x, y, z...) ->
+  console.log x
+  console.log y
+  console.log z
+
+test "one", "two"
+###
+one
+two
+[]
+###
+console.log "================"
+
+test "one", "two", "three"
+###
+one
+two
+[ 'three' ]
+###
+console.log "================"
+
+test "one", "two", "three", "four"
+###
+one
+two
+[ 'three', 'four' ]
+###
+console.log "================"
+
+# Unlike Java, splats don't have to be last parameter
+test2 = (x..., y, z) ->
+  console.log x
+  console.log y
+  console.log z
+
+test2 "one", "two", "three", "four", "five"
+###
+[ 'one', 'two', 'three' ]
+four
+five
+###
+console.log "================"
+
+test2 "one", "two"
+###
+[]
+one
+two
+###
