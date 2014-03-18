@@ -57,7 +57,7 @@ console.log person?.name?.firstLetter?.somethingElse
 name ?= "Joe"
 console.log name # Jeremy
 
-name2 = false;
+name2 = false
 name2 ?= "Joe"
 console.log name2 # false
 
