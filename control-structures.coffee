@@ -84,3 +84,48 @@ giveWork = (person) ->
       console.log "Design task ready for #{person.name}"
     else
       console.log "Ummm... do you work here?"
+
+# Can combine when and then keywords to use switch with single line:
+giveWork2 = (person) ->
+  switch person.job
+    when "Programmer" then console.log "Coding task ready for #{person.name}"
+    when "Designer" then console.log "Design task ready for #{person.name}"
+    else console.log "Ummm... do you work here?"
+
+giveWork2(person)
+
+# NOTE: All of above statements are actually expressions,
+#   That means they return a value
+
+person1 =
+  name: "Jeremy"
+  relationship: "Friend"
+
+person2 =
+  name: "Jim"
+  relationship: "Boss"
+
+# We pass to console.log the result of the if/else expression
+greet = (person) ->
+  console.log if person.relationship is "Friend"
+    "Hi, #{person.name}"
+  else if person.relationship is "Boss"
+    "Hello, sir"
+
+greet(person1)
+greet(person2)
+console.log "==========="
+
+# Ternary Operator implemented as
+# someVar = if condition then truthy else falsey
+
+# Can also use expression returned with 'switch'
+greet2 = (person) ->
+  msg = switch person.relationship
+    when "Friend" then "Hi, #{person.name}"
+    when "Boss" then "Hello sir"
+    else "Who are you?"
+  console.log msg
+
+greet2(person1)
+greet2(person2)
