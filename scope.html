@@ -1,0 +1,18 @@
+<script>
+
+  /* courseTopic is a global variable, can be accessed from any code
+     running anywhere in the browser
+  */
+  var courseTopic = "CoffeeScript";
+
+  console.log(courseTopic); // CoffeeScript
+
+  // In browser, 'this' refers to window object
+  console.log(this.courseTopic); // CoffeeScript
+
+  console.log(window.courseTopic); // CoffeeScript
+
+</script>
+
+<!-- Now let's see how CoffeeScript handles scope -->
+<script src="scope.js"></script>

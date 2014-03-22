@@ -6,3 +6,6 @@ $ coffee -cw makeArray.coffee
 
 # Coffee REPL
 $ coffee
+
+# compile without anonymous function wrapper - NOT RECOMMENDED!!!
+$ coffee -c --bare myfile.coffee
