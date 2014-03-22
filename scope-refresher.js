@@ -25,3 +25,21 @@ console.log(inc()); // NaN
 // Passing object literal as parameter to call method:
 //  Doing so means we're telling it what we want 'this' to be inside function
 console.log(inc.call({ count : 10 }));
+console.log("===========");
+
+// Value of 'this' can change inside a function, example:
+var classroom = {
+  students: ["John", "Jane", "Jill", "Joe"],
+  print: function() {
+    var thiz = this; // At this line, this is bound to object classroom
+    function getName (i) {
+      // inside a function, 'this' refers to window or global object
+      // return this.students[i];
+      return thiz.students[i];
+    }
+    for (var i = 0; i< this.students.length; i++) {
+      console.log(getName(i));
+    }
+  }
+}
+classroom.print();
