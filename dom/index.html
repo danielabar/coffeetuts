@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoffeeScript in the Browser</title>
+    <link rel="stylesheet" href="style,css" />
+  </head>
+  <body>
+    <div id="menu">
+      <div>Tools</div>
+      <div id="dropdown">
+        <ul>
+          <li>Tool 1</li>
+          <li>Tool 2</li>
+          <li>Tool 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="vendor/jquery-2.1.0.js"></script>
+
+    <!-- For compiling CoffeeScript to JavaScript right in the browser (not for production use!) -->
+    <script src="vendor/coffee-script.js"></script>
+    <script type="text/coffeescript" src="src/script.coffee"></script>
+
+    <!-- Our compiled custom code (was done via coffee -cw in terminal -->
+    <!-- < script src="js/script.js">< / script > -->
+
+  </body>
+</html>

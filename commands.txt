@@ -9,3 +9,6 @@ $ coffee
 
 # compile without anonymous function wrapper - NOT RECOMMENDED!!!
 $ coffee -c --bare myfile.coffee
+
+# compile/watch and move output to specified folder
+$ coffee -cw -o js src/*.coffee
