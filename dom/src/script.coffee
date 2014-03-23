@@ -1,3 +1,5 @@
+testvar = 10
+
 $ ->
   menu = $ '#menu'
   dropdown = $ '#dropdown'
